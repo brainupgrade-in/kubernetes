@@ -34,21 +34,25 @@ COPY jenkins-slave /usr/local/bin/jenkins-slave
 RUN chmod 777 /usr/local/bin/jenkins-slave
 
 RUN echo 'jenkins ALL=(ALL) NOPASSWD:ALL'| sudo EDITOR='tee -a' visudo
+
 # below is to ensure jenkins to have access to docker commands
 RUN usermod -aG docker ${user}
 RUN exec newgrp docker 
 RUN exec su -l ${user}
 
+# Comment below  otherwise agent will not run saying /home/jenkins/agent directory does not have appropriate RWX permissions
+USER ${user}  
+
 ENV AGENT_WORKDIR=${AGENT_WORKDIR}
 RUN mkdir /home/${user}/.jenkins && mkdir -p ${AGENT_WORKDIR}
 
-VOLUME /home/${user}/.jenkins
-VOLUME ${AGENT_WORKDIR}
+# VOLUME /home/${user}/.jenkins
+# VOLUME ${AGENT_WORKDIR}
 WORKDIR /home/${user}
 
-RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-RUN chmod +x ./kubectl
 
-# USER ${user}  # had to commnt this otherwise agent will not run saying /home/jenkins/agent directory does not have appropriate RWX permissions
+# RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+# RUN chmod +x ./kubectl
+
 
 ENTRYPOINT ["/usr/local/bin/jenkins-slave"]
