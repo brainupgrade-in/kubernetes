@@ -2,12 +2,14 @@
 Setting up scalable Jenkins on kubernetes can be a daunting dask.  Below is the step by step guide to make it happen.  
 
 ## Jenkins Master Node
-Jenkins master uses the image brainupgrade/jenkins:2.274jdk11x
+Jenkins master uses the image ```sh brainupgrade/jenkins:2.274jdk11x ```
+
 This image has many plugins required for smooth CD on kubernetes.  To know the image content, Dockerfile (./master/Dockerfile) is kept here
 
 ## Jenkins Slave Node
 
-Jenkins slave uses the image brainupgrade/jnlp-slave:1.0.0
+Jenkins slave uses the image ```sh  brainupgrade/jnlp-slave:1.0.0 ```
+
 This image is based on openjdk11 containing maven, docker runtime so that spring boot 
 project can be checked out, maven built including docker image building & deployment.
 
