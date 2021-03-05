@@ -88,4 +88,7 @@ Once build job completes, then build pod is terminated
 
 ![Build Pod getting terminated after build completion](./pictures/build-pod-success.png)
 
-      
+## Kubernetes Cluster Info
+- Kubernetes Server 1.19.7
+- Cluster Management Tool - kops
+- Cloud Provider AWS
