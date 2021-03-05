@@ -1,0 +1,11 @@
+FROM jenkins/jnlp-slave:latest-jdk11
+
+USER root
+RUN apt-get update -y && apt-get install -y curl maven sudo
+RUN mkdir -p /tmp/_install && cd /tmp/_install && wget https://get.docker.com/builds/Linux/x86_64/docker-latest.tgz && tar -xvzf docker-latest.tgz && cd docker && cp docker /usr/bin/docker && rm -rf /tmp/_install
+RUN chmod +x /usr/bin/docker
+# add jenkins to docker group
+RUN groupadd -g 999 docker
+RUN usermod -a -G docker jenkins
+
+User root

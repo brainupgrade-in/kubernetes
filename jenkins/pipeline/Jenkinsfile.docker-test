@@ -1,0 +1,23 @@
+pipeline {
+    agent { 
+        kubernetes{
+            label 'jenkins-slave'
+        }
+        
+    }
+    environment{
+        DOCKER_USERNAME = 'brainupgrade'
+        DOCKER_PASSWORD = credentials('docker-brainupgrade')
+        GIT_USERNAME = 'brainupgrade-in'
+        GIT_PASSWORD = credentials('bugithub')
+    }
+    stages {
+        stage('docker login') {
+            steps{
+                sh(script: """
+                    docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+                """, returnStdout: true) 
+            }
+        }
+    }
+}
