@@ -81,6 +81,9 @@ Click SAVE
 Run the docker-test job and you would see that a pod will be launched by Jenkins master to run the docker-test build job and the pod will be terminated immediately build completes.
 
 ![Build Pod Running](./pictures/build-pod-running.png)
+
+Once build job completes, then build pod is terminated
+
 ![Build Pod getting terminated after build completion](./pictures/build-pod-success.png)
 
       
