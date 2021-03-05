@@ -40,10 +40,10 @@ After login, come back to this URL again and select tick mark to Agent - Control
 ### Configure the Kubernetes plugin as shown in the snapshots below
 Now go to the URL: http://localhost:8080/configureClouds and key in the configuration as shown in the below snapshots.
 
-![Kubernetes](./pictures/configureClouds-1.png)
-![Pod Template](./pictures/configureClouds-2.png)
-![Pod Template](./pictures/configureClouds-3.png)
-![Pod Template](./pictures/configureClouds-4.png)
+![Kubernetes](./pictures/configureCloud-1.png)
+![Pod Template](./pictures/configureCloud-2.png)
+![Pod Template](./pictures/configureCloud-3.png)
+![Pod Template](./pictures/configureCloud-4.png)
 
 ### Setup Global credentials
 To test the docker commands especially login, first setup the global credentials as shown in below
