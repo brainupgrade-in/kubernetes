@@ -32,7 +32,7 @@ Jenkins slave uses the image ```  brainupgrade/jnlp-slave:1.0.0 ```
 This image is based on openjdk11 containing maven, docker runtime so that spring boot 
 project can be checked out, maven built including docker image building & deployment.
 
-## Steps
+## Steps - Scalable Jenkins on Kubernetes Cluster
 Below is the step by step guide to make it happen.  
 
 ### Launch Jenkins master
@@ -109,26 +109,30 @@ Once build job completes, then build pod is terminated
 
 ![Build Pod getting terminated after build completion](./pictures/build-pod-success.png)
 
-## Automated CI CD
+## Steps - Jenkins Pipeline for Automated CI CD
 To illustrate, automated CI CD, I have setup an example github project 
 [Weather Service](https://github.com/brainupgrade-in/weather-service)
 Also created a branch named **jenkins** and whenever any contributions are made to this branch via pull request, branch / project admin can review the pull request, view the build and test status before merging into **jenkins** branch as seen in the below snapshot
 
 ![Build checks before pull request merge](./pictures/github-pull-request-build-checks.png)
 
+### Jenkins Job
 On Jenkins, setup a build job named weather-service and type pipeline, click OK and then scroll down to insert content of this [pipeline file](./pipleline/Jenkisnfile) into the pipeline section.
 
-Also, install below plugins
+### Install Plugin
+Also, install below plugin
  - GitHub pull request builder
 
+### Github Setup
 Now generate access token using https://github.com/settings/tokens/new  (select repo:status)
-
-Create Jenkings Credentials (type: Secret text) using above access token say github-bu-token
 
 Create webhook using your Github repo settings
 1. Insert https://<Your_Jenkins_Public_URL>/ghprbhook/ 
 2. Event trigger - Select individual events (Pull requests, Issue comments)
 So that whenever any pull request is created, Github can notify your Jenkins URL
+
+### Jenkins Setup
+Create Jenkings Credentials (type: Secret text) using above access token say github-bu-token
 
 Configure GitHub Server here http://localhost:8080/configure
 
@@ -146,7 +150,8 @@ Select Github Pull Request Builder, see the below snapshot
 
 Click on advanced and insert whitelist target branch say jenkins. You should also select **Build every pull request automatically without asking** to ensure that every pull request is good enough in terms of build and test quality before merging
 
-
+### Test the setup
+Now, you can raise pull request on the selected branch (jenkins in my case) and you would notice that the build gets triggered automatically and its results will be shown on the Pull request page so that branch admin can review the outcome and decide on the merge.
 
 ## Build Status
 To show the build status on your main Github page, install the plugin  ``` embeddable-build-status``` and goto your build job and click  on this plugin  link to generate URL that would look similar to the below
