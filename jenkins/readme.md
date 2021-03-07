@@ -112,9 +112,7 @@ Once build job completes, then build pod is terminated
 ## Steps - Jenkins Pipeline for Automated CI CD
 To illustrate, automated CI CD, I have setup an example github project 
 [Weather Service](https://github.com/brainupgrade-in/weather-service)
-Also created a branch named **jenkins** and whenever any contributions are made to this branch via pull request, branch / project admin can review the pull request, view the build and test status before merging into **jenkins** branch as seen in the below snapshot
-
-![Build checks before pull request merge](./pictures/github-pull-request-build-checks.png)
+Also created a branch named **jenkins** and whenever any contributions are made to this branch via pull request, branch / project admin can review the pull request, view the build and test status before merging into **jenkins** branch 
 
 ### Jenkins Job
 On Jenkins, setup a build job named weather-service and type pipeline, click OK and then scroll down to insert content of this [pipeline file](./pipleline/Jenkisnfile) into the pipeline section.
@@ -152,6 +150,9 @@ Click on advanced and insert whitelist target branch say jenkins. You should als
 
 ### Test the setup
 Now, you can raise pull request on the selected branch (jenkins in my case) and you would notice that the build gets triggered automatically and its results will be shown on the Pull request page so that branch admin can review the outcome and decide on the merge.
+
+![Build checks before pull request merge](./pictures/github-pull-request-build-checks.png)
+
 
 ## Build Status
 To show the build status on your main Github page, install the plugin  ``` embeddable-build-status``` and goto your build job and click  on this plugin  link to generate URL that would look similar to the below
