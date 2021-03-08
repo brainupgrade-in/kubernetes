@@ -44,7 +44,7 @@ pipeline {
             }
         }
 
-        stage('docker push') {
+        stage('docker repo push') {
             steps{
                 sh(script: """
                     docker push brainupgrade/weather-services:jenkins-${BUILD_NUMBER}
@@ -64,7 +64,7 @@ pipeline {
                 '''
             }
         }
-        stage('git push') {
+        stage('tag & git push') {
             steps {
                 sh script: '''
                 #!/bin/bash
