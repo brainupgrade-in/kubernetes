@@ -52,7 +52,7 @@ pipeline {
             }
         }
 
-        stage('deploy') {
+        stage('k8s deploy') {
             steps{
                 sh script: '''
                 #!/bin/bash

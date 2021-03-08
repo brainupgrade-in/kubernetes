@@ -176,7 +176,8 @@ This article demonstrated How to setup Jenkins Pipeline to achieve automated CI 
 
 # About Author
 
-The author, [Rajesh G](https://www.linkedin.com/in/rajesh-g-b48495/), is The Chief Architect @ Brain Upgrade Academy where he has designed the IoT-based Fleet Management Platform that runs on a Kubernetes Cluster on AWS Amazon.
+The author, [Rajesh G](https://www.linkedin.com/in/rajesh-g-b48495/), is The Chief Architect @ Brain Upgrade Academy where he has designed the IoT-based Fleet Management Platform that runs on a Kubernetes Cluster on AWS Amazon.  He is also a certified Kubernetes Administrator and TOGAF certified Enterprise Architect.
+Rajesh led various digital transformation initiatives for Fortune 500 Fin Tech companies. Over the last 20+ years, he has been part of many successful technology startups.
 
 # About Brain Upgrade Academy
 
