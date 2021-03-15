@@ -86,3 +86,25 @@ The output shows that nginx serves a web page written by the debian container:
 welcome to brainupgrade
 
 ![output](./Output.png)
+
+
+# Conclusion
+This article demonstrated how to create Multi-container pod in Kubernetes and establish communication between them using a shared Volume.Although this is a very basic example but perfect example to understand the concept of Multi-container pod in Kubernetes.
+
+
+# About Author
+
+The author, [Ninad Samudre](https://www.linkedin.com/in/ninad-samudre-19439b1a5/), is The Cloud Application Manager @ Brain Upgrade where he manage IoT-based Fleet Management Platform that runs on a Kubernetes Cluster on AWS Amazon.
+
+# About Brain Upgrade Academy
+
+We, at Brain Upgrade, offer Kubernetes Consulting services to our clients including Up Skilling (training) of clients teams thus facilitate efficient utilization of Kubernetes Platform.  To know more on the Kubernetes please visit [www.brainupgrade.in/blog](www.brainupgrade.in/blog) and register on [www.brainupgrade.in/enroll](www.brainupgrade.in/enroll) to equip yourself with Kubernetes skills.
+
+# Why Brain Upgrade
+
+We at Brain Upgrade, partner with our customers in the digital transformation of their businesses by providing: 
+
+Technology Consulting in product development, IoT, DevOps, Cloud, Containerization, Big Data Analysis with a heavy focus on Open source technologies. 
+Training the IT workforce on the latest cloud technologies such as Kubernetes, Docker, AI, ML, etc. 
+
+You may want to register for the upcoming trainings on [https://brainupgrade.in/enroll](https://brainupgrade.in/enroll)
