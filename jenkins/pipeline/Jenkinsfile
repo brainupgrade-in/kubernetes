@@ -59,7 +59,7 @@ pipeline {
                 cd $HOME
                 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
                 chmod +x ./kubectl
-                sed -i 's/weather-services:latest/weather-services:${BUILD_NUMBER}/g' $WORKSPACE/kubernetes/deploy.yaml
+                sed -i "s/weather-services:latest/weather-services:jenkins-${BUILD_NUMBER}/g" $WORKSPACE/kubernetes/deploy.yaml
                 ./kubectl apply -f $WORKSPACE/kubernetes/deploy.yaml
                 '''
             }
