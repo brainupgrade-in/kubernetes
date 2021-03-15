@@ -43,7 +43,7 @@ spec:
     args: ["-c", "echo welcome to brainupgrade > /pod-data/index.html"]
 ```
 
-![Pod](./multi-containers/pod-created.png)
+![Pod](./pod-created.png)
 
 Having multiple containers in a single Pod makes it relatively straightforward for them to communicate with each other. They can do this using Shared volumes.
 
@@ -61,7 +61,7 @@ kubectl get pod two-container-pod --output=yaml
 ```
 Here is a portion of the output:
 
-![Container](./multi-containers/Container-terminate.png)
+![Container](./Container-terminate.png)
 
 You can see that the debian Container has terminated, and the nginx Container is still running.
 
@@ -85,4 +85,4 @@ The output shows that nginx serves a web page written by the debian container:
 
 welcome to brainupgrade
 
-![output](./multi-containers/Output.png)
+![output](./Output.png)
