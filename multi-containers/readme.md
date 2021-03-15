@@ -1,13 +1,13 @@
-## Multi-container pods in Kubernetes and communication between them using a shared Volume
+# Multi-container pods in Kubernetes and communication between them using a shared Volume
 
 In this Blog I will show How to create Multi-container pods in Kubernetes and establish communication between them using a shared Volume
 
-# You need a few things.
+## You need a few things.
 
-1.An existing Kubernetes Cluster or minikube.
-2.kubectl binary locally installed.
+- An existing Kubernetes Cluster or minikube.
+- kubectl binary locally installed.
 
-# Creating a Pod that runs two Containers 
+## Creating a Pod that runs two Containers 
 
 In this blog, we create a Pod that runs two Containers. The two containers share a Volume that they can use to communicate. Here is the configuration file for the Pod:
 
