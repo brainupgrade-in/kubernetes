@@ -6,6 +6,10 @@ Do you have many intenet facing applications and worried about the cost of Load 
 
 Let us first understand what the Ingress is.  Ingress is an API object that manages external access to the services in a cluster and may provide load balancing, SSL termination and name-based virtual hosting.
 
+![Ingress Overview](./pictures/ingress.png)
+
+Source: [kubernetes.io](https://kubernetes.io/docs/concepts/services-networking/ingress/)
+
 You will see how Load Balancing, SSL termination and Name-based virtual hosting work as I take you through the article with examples.
 
 ## What is Ingress Controller?
@@ -116,6 +120,9 @@ This technique has been used by many web servers (apache, nginx etc) wherein req
 In the Kubernetes world, using Ingress definition this concept is further extended to route requests for multiple domains to the relevant app components that usually run on many servers / nodes.
 
 See the example below:
+
+![Name based virtual Hosting](./pictures/name-based-vhosts.png)
+
 
 ```
 apiVersion: networking.k8s.io/v1
