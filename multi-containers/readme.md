@@ -1,6 +1,6 @@
 # Multi-container pods in Kubernetes and communication between them using a shared Volume
 
-In this Blog I will show How to create Multi-container pods in Kubernetes and establish communication between them using a shared Volume
+In this blog I will show how to create multi-container pods in Kubernetes and establish communication between them using a shared Volume
 
 ## You need a few things.
 
@@ -9,7 +9,7 @@ In this Blog I will show How to create Multi-container pods in Kubernetes and es
 
 ## Creating a Pod that runs two Containers 
 
-In this blog, we create a Pod that runs two Containers. The two containers share a Volume that they can use to communicate. Here is the configuration file for the Pod:
+In this blog, We create a Pod that runs two Containers. The two containers share a Volume that they can use to communicate. Here is the configuration file for the Pod:
 
 two-container-pod.yaml
 
@@ -43,11 +43,11 @@ spec:
     args: ["-c", "echo welcome to brainupgrade > /pod-data/index.html"]
 ```
 
-![Pod](./pod-created.png)
-
 Having multiple containers in a single Pod makes it relatively straightforward for them to communicate with each other. They can do this using Shared volumes.
 
 In this example, we define a volume named shared-data. Its type is emptyDir, which means that the volume is first created when a Pod is assigned to a node, and exists as long as that Pod is running on that node.As the name says, it is initially empty. The 1st container runs nginx server and has the shared volume mounted to the directory /usr/share/nginx/html.The 2nd container uses the Debian image and has the shared volume mounted to the directory /pod-data. 
+
+![Pod](./pod-created.png)
 
 Notice that the second container writes the index.html file in the root directory of the nginx server.
 
@@ -77,7 +77,7 @@ root@two-containers:/# ps aux
 ```
 The output is similar to this:
 
-Recall that the debian Container created the index.html file in the nginx root directory. Use curl to send a GET request to the nginx server:
+Recall that the debian container created the index.html file in the nginx root directory. Use curl to send a GET request to the nginx server:
 ```sh
 root@two-containers:/# curl localhost
 ```
@@ -89,7 +89,7 @@ welcome to brainupgrade
 
 
 # Conclusion
-This article demonstrated how to create Multi-container pod in Kubernetes and establish communication between them using a shared Volume.Although this is a very basic example but perfect example to understand the concept of Multi-container pod in Kubernetes.
+This article demonstrated how to create multi-container pod in Kubernetes and establish communication between them using a shared Volume. Although this is a very basic example but perfect example to understand the concept of multi-container pod in Kubernetes.
 
 
 # About Author
