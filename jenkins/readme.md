@@ -174,7 +174,7 @@ Below is the info on the tool used to setup Kubernetes cluster and its version
 ## Conclusion
 This article demonstrated How to setup Jenkins Pipeline to achieve automated CI CD including Github and Jenkins integration.  The moment Git Pull request is raised on a particular branch, build is triggered and results are made avaialble to the branch admin to review before merging the pull request.
 
-# About Author
+# About The Author
 
 The author, [Rajesh G](https://www.linkedin.com/in/rajesh-g-b48495/), is The Chief Architect @ Brain Upgrade Academy where he has designed the IoT-based Fleet Management Platform that runs on a Kubernetes Cluster on AWS Amazon.  He is also a certified Kubernetes Administrator and TOGAF certified Enterprise Architect.
 Rajesh led various digital transformation initiatives for Fortune 500 Fin Tech companies. Over the last 20+ years, he has been part of many successful technology startups.

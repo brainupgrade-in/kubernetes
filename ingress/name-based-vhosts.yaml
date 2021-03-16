@@ -1,0 +1,35 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: name-based-vhosts
+spec:
+  rules:
+  - host: weather-v1.brainupgrade.in
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: weather-v1
+            port:
+              number: 80
+  - host: weather-v2.brainupgrade.in
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: weather-v2
+            port:
+              number: 80
+  - http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: weather
+            port:
+              number: 80
