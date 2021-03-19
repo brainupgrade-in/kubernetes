@@ -154,8 +154,10 @@ kops rolling-update cluster --name <name of cluster> --state s3://<s3 bucket url
 Once done, apply create appropriate roles and permissions including launching scaling agent.  See below:
 
 ```
-kubectl apply -f [autoscaler-autodiscover.yaml](./autoscaler-autodiscover.yaml)
+kubectl apply -f ./autoscaler-autodiscover.yaml
 ```
+
+The yaml file is kept here [autoscaler-autodiscover.yaml](./autoscaler-autodiscover.yaml)
 
 Please do modify the yaml by replacing name of your cluster on line 157
 
