@@ -187,3 +187,9 @@ Technology Consulting in product development, IoT, DevOps, Cloud, Containerizati
 Training the IT workforce on the latest cloud technologies such as Kubernetes, Docker, AI, ML, etc. 
 
 You may want to register for the upcoming trainings on [https://brainupgrade.in/enroll](https://brainupgrade.in/enroll)
+
+#### Publications
+This article is published on the following portals / publications
+<https://www.linkedin.com/pulse/scalable-jenkins-kubernetes-cluster-pipeline-automated-rajesh-g-/>
+<https://rajeshgheware.medium.com/expose-your-app-to-the-internet-using-ingress-controller-save-100s-of-dollars-on-aws-load-e9f28c4958ea>
+<https://dev.to/rajeshgheware/expose-your-app-to-the-internet-using-ingress-controller-save-1000s-of-dollars-on-aws-load-balancer-ooe>
