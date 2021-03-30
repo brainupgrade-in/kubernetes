@@ -191,3 +191,9 @@ Technology Consulting in product development, IoT, DevOps, Cloud, Containerizati
 Training the IT workforce on the latest cloud technologies such as Kubernetes, Docker, AI, ML, etc. 
 
 You may want to register for the upcoming trainings on [https://brainupgrade.in/enroll](https://brainupgrade.in/enroll)
+
+#### Publications
+This article is published on the following portals / publications:
+<https://dzone.com/articles/scalable-jenkins-on-kubernetes-cluster-amp-pipelin>
+<https://rajeshgheware.medium.com/scalable-jenkins-on-kubernetes-cluster-pipeline-for-automated-ci-cd-jenkins-github-693d850ea780>
+<https://dev.to/rajeshgheware/scalable-jenkins-on-kubernetes-cluster-pipeline-for-automated-ci-cd-jenkins-github-integration-3a33>

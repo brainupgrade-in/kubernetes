@@ -251,3 +251,10 @@ Technology Consulting in product development, IoT, DevOps, Cloud, Containerizati
 Training the IT workforce on the latest cloud technologies such as Kubernetes, Docker, AI, ML, etc. 
 
 You may want to register for the upcoming trainings on [https://brainupgrade.in/enroll](https://brainupgrade.in/enroll)
+
+#### Publications
+This article is published on the following portals / publications:
+<https://dzone.com/articles/microservices-with-observability-on-kubernetes>
+<https://www.linkedin.com/pulse/microservices-observability-kubernetes-rajesh-g-/>
+<https://rajeshgheware.medium.com/microservices-on-kubernetes-9693c048aa29>
+<https://dev.to/rajeshgheware/microservices-observability-on-kubernetes-2546>
