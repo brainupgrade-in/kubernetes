@@ -3,6 +3,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: docker
+  labels:
+    app: docker-in-k8s
 spec:
   volumes:
   - name: dind-storage
