@@ -1,3 +1,14 @@
+# Clone BrainUpgrade Kubernetes repo
+`git clone https://github.com/brainupgrade-in/kubernetes`
+
+# Launch virtual machines using vagrant including kubernetes cluster setup using kubeadm
+`cd scalability/wordpress`
+
+`vagrant up`
+
+# Login into Kubernetes control plane
+`vagrant ssh master`
+
 # Install metrics server using Helm
 ## Install helm
 `curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash`
@@ -16,15 +27,18 @@ kubectl edit deploy metrics-metrics-server
         - metrics-server
         - --kubelet-insecure-tls
         - --kubelet-preferred-address-types=InternalIP
+
 # Deploy wordpress app
 `kubectl apply -k .`
 ## Define resources
 `kubectl set resources deploy wordpress --requests=cpu=50m,memory=100Mi –limits=cpu=200m,memory=300Mi`
 ## Enable Horizontal scaling
 `kubectl autoscale --min 1 --max 5 deploy wordpress --cpu-percent 50`
+
 # Apache Bench
 If using ubuntu as host os, then use below command else download from Apache bench site
 `sudo apt-get install apache2-utils`
+
 # Troubleshooting
 ## Coredns
 If wordpress is unable to connect to the database, then restart coredns deployment
