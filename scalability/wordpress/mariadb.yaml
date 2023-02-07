@@ -37,4 +37,4 @@ spec:
         - name: MARIADB_PASSWORD
           value: wordpress 
         - name: MARIADB_DATABASE
-          value: wordpress:3306
+          value: wordpress

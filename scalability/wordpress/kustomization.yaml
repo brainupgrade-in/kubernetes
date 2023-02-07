@@ -1,6 +1,3 @@
 resources:
-  - deploy-wp.yaml
-  - svc-wp.yaml
-  - ingress-wp.yaml
-  - deploy-mariadb.yaml
-  - svc-mariadb.yaml
+  - mariadb.yaml
+  - wordpress.yaml
