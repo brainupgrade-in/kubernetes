@@ -1,7 +1,7 @@
 # Multi-node kubeadm cluster (1 master, 2 workers) using kind
 ## Pre-requisites
 Host OS - Ubuntu 22.04 or higher
-
+## Steps
 - Install docker
 
 ```
