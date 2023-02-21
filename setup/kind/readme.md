@@ -26,8 +26,13 @@ sudo mv ./kind /usr/local/bin/kind
 `kind create cluster --name k8s --config cluster.yaml`
 - Set alias 
 
-`echo "alias k=kubectl" >> ~/.bash_aliases`
-`source ~/.bash_aliases`
+`echo "alias k=kubectl" >> ~/.bash_aliases && source ~/.bash_aliases`
+
+- Install kubectl
+```
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+```
 
 # Test 
 - Deploy hello app 
