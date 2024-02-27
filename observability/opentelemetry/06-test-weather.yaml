@@ -213,7 +213,7 @@ spec:
           name: weather-front
           resources:
             limits:
-              cpu: 1
+              cpu: 1000m
               memory: 2048Mi
             requests:
               cpu: 100m
