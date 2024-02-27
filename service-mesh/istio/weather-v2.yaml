@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: weather
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: weather
+        version: v2
+    spec:
+      containers:
+      - name: weather
+        image: brainupgrade/weather-py:v2
+        ports:
+        - containerPort: 80

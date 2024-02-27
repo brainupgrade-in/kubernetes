@@ -1,0 +1,53 @@
+apiVersion: opentelemetry.io/v1alpha1
+kind: OpenTelemetryCollector
+metadata:
+  name: otel
+  namespace: observability
+spec:
+  config: |
+    receivers:
+      filelog:
+        include: ["/var/log/containers/*.log"]
+      otlp:
+        protocols:
+          grpc:
+            endpoint: 0.0.0.0:4317
+          http:
+            endpoint: 0.0.0.0:4318
+    processors:
+      memory_limiter:
+        check_interval: 1s
+        limit_percentage: 75
+        spike_limit_percentage: 15
+      batch:
+        send_batch_size: 1000
+        timeout: 10s
+
+    exporters:
+      # NOTE: Prior to v0.86.0 use `logging` instead of `debug`.
+      debug:
+      prometheusremotewrite:
+        endpoint: "http://prometheus-kube-prometheus-prometheus.observability:9090/api/v1/write"
+      loki:
+        endpoint: "http://loki.observability:3100/loki/api/v1/push"      
+      otlp:
+        endpoint: http://tempo.observability.svc.cluster.local:4317
+        retry_on_failure:
+          enabled: true
+        tls:
+          insecure: true
+    service:
+      pipelines:
+        traces:
+          receivers: [otlp]
+          processors: [memory_limiter, batch]
+          exporters: [debug,otlp]
+        metrics:
+          receivers: [otlp]
+          processors: [memory_limiter, batch]
+          exporters: [debug,prometheusremotewrite]
+        logs:
+          receivers: [otlp]
+          processors: [memory_limiter, batch]
+          exporters: [debug,loki]
+  mode: daemonset 

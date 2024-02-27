@@ -1,0 +1,25 @@
+metricsGenerator:
+  enabled: true
+  config:
+    storage:
+      path: /var/tempo/wal
+      wal:
+      remote_write_flush_deadline: 1m
+      remote_write:
+       - url: http://prometheus.observability:9090/api/v1/write
+storage:
+  trace:
+    backend: filesystem
+
+traces:
+  otlp:
+    http:
+      enabled: true
+    grpc:
+      enabled: true
+
+metaMonitoring:
+  serviceMonitor:
+    enabled: true
+    labels:
+      prometheus: system

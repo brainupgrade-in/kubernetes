@@ -1,0 +1,68 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    release: prometheus
+  name: hello-app-monitoring-rules
+  namespace: default
+spec:
+  groups:
+  - name: HelloServiceAlerts
+    rules:
+    - alert: HelloServiceDown
+      expr: |
+        sum by (host) (rate(nginx_ingress_controller_requests{host="hello.internal.brainupgrade.in", status=~"5.."}[1m]))
+        /
+        sum by (host) (rate(nginx_ingress_controller_requests{host="hello.internal.brainupgrade.in"}[1m]))
+        > 0.5
+        OR
+        absent(rate(nginx_ingress_controller_requests{host="hello.internal.brainupgrade.in", status=~"2.."}[1m])) 
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        summary: "Hello service is down"
+        description: "The Hello service at hello.internal.brainupgrade.in is experiencing an unusually high error rate or no traffic at all."
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: ingress-nginx-controller
+  namespace: ingress-nginx  
+  labels:
+    release: prometheus  
+spec:
+  groups:
+  - name: ingress-nginx-controller-health
+    rules:
+    - alert: NginxNoReponse
+      expr: absent(rate(nginx_ingress_controller_success[1m]))
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        summary: "NGINX Ingress Controller No Response"
+        description: "The NGINX Ingress Controller is not responding to requests."
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: ingress-500-errors
+  namespace: monitoring
+  labels:
+    release: prometheus  
+spec:
+  groups:
+  - name: http-errors
+    rules:
+    - alert: HighHTTPErrorRate
+      expr: |
+        sum (rate(nginx_ingress_controller_requests{status=~"5.."}[1m])) > 0.1
+        OR
+        absent(sum (rate(nginx_ingress_controller_requests{status=~"5.."}[1m])))
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        summary: High HTTP Error Rate
+        description: "This alert fires when the rate of HTTP 500 responses from the Ingress exceeds 0.1 per second over the last 1 minutes."

@@ -1,0 +1,14 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: weather
+  namespace: default
+spec:
+  hosts:
+  - weather-service
+  http:
+  - route:
+    - destination:
+        host: weather-service
+        subset: v1
+      weight: 100

@@ -234,6 +234,12 @@ And to see the whole cluster metrics,  import the grafana dashboard id 6417 and 
 
 ![Kubernetes k8s Cluster Metrics Overview](./pictures/image14.png)
 
+# Grafana Dashboards
+4701 12685 - Spring boot microservices
+6417 11074 - Cluster 
+9964 - Jenkins
+
+
 # About The Author
 
 The author, [Rajesh G](https://www.linkedin.com/in/rajesh-g-b48495/), is The Chief Architect @ Brain Upgrade Academy where he has designed the IoT-based Fleet Management Platform that runs on a Kubernetes Cluster on AWS Amazon.  He is also a certified Kubernetes Administrator and TOGAF certified Enterprise Architect.

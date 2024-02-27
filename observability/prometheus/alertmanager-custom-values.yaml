@@ -1,0 +1,19 @@
+alertmanager:
+  config:
+    global:
+      smtp_smarthost: 'smtp.example.com:587'
+      smtp_from: 'alertmanager@example.com'
+      smtp_auth_username: 'user@example.com'
+      smtp_auth_password: 'password'
+    route:
+      receiver: 'default-receiver'
+      routes:
+        - match:
+            severity: 'critical'
+          receiver: 'critical-emails'
+    receivers:
+      - name: 'default-receiver'
+        # Existing receiver configuration
+      - name: 'critical-emails'
+        email_configs:
+          - to: 'critical-alerts@example.com'
