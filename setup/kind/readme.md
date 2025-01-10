@@ -35,6 +35,12 @@ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stabl
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 ```
 
+- Copy kubeconfig
+```
+mkdir .kube
+sudo cp /root/.kube/config ~/.kube/config
+sudo chown palmeto:palmeto ~/.kube/config
+```
 # Test 
 - Deploy hello app 
 
