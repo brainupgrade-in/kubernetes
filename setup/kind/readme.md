@@ -1,6 +1,6 @@
 # Multi-node kubeadm cluster (1 master, 2 workers) using kind
 ## Pre-requisites
-Host OS - Ubuntu 22.04 or higher
+Host OS - Ubuntu 24.10 or higher
 ## Steps
 - Install docker
 
@@ -15,7 +15,7 @@ Restart the system
 
 - Install kind
 ```
-curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.17.0/kind-linux-amd64
+curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.26.0/kind-linux-amd64
 chmod +x ./kind
 sudo mv ./kind /usr/local/bin/kind
 ```
